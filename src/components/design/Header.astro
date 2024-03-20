@@ -47,6 +47,9 @@ navItems.forEach((item)=>{
         if(item.classList.contains('header__link')){
             nav.classList.add('d-none') 
             menuSvg.classList.toggle('open')
+            enablePageScroll();
+        }else{
+            disablePageScroll();
         }
     })
 })
