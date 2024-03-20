@@ -1,0 +1,11 @@
+---
+const { class:className } =  Astro.props
+---
+
+<section class=`section | ${className}`>
+    <slot />
+    <div class="section__line-l"></div>
+    <div class="section__line-r"></div>
+    <slot name="plus-l"/>
+    <slot name="plus-r"/>
+</section>

@@ -1,0 +1,88 @@
+---
+import { brainwaveSymbol, portada } from "../assets";
+import Header from "../components/design/Header.astro";
+import Hero from "../components/design/Hero.astro";
+import Benefits from "../components/design/Benefits.astro";
+import Collaboration from "../components/design/Collaboration.astro";
+import Services from "../components/design/Services.astro";
+import Pricing from "../components/design/Pricing.astro";
+import Working from "../components/design/Working.astro";
+import Footer from "../components/design/Footer.astro";
+import ButtonGradient from "../assets/svg/ButtonGradient.astro";
+import ClipPath from "../assets/svg/ClipPath.astro";
+import {SEO} from 'astro-seo';
+import "../sass/main.scss";
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href={brainwaveSymbol.src} />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <SEO 
+    description="Introducing Brainwave, a fully-featured AI landing page kit that comes with design files and stunning illustrations with alpha (transparent background) in Figma."
+      title="Brainwave - AI Landing Page"
+      openGraph={{
+        basic:{
+          title:'Brainwave - AI Landing Page',
+          type: 'Landing',
+          image: '/portada.jpg'
+        }
+        
+      }}
+      twitter={{
+        creator: "@wilvmc"
+      }}
+      extend={{
+        // extending the default link tags
+        link: [{ rel: "icon", href: "/favicon.svg" }],
+        // extending the default meta tags
+        meta: [
+          {
+            name: "twitter:image",
+            content:
+              "/portada.jpg",
+          },
+          { name: "twitter:title", content: "Brainwave - AI Landing Page" },
+          { name: "twitter:description", content: "Introducing Brainwave, a fully-featured AI landing page" },
+        ],
+      }}
+    />
+  </head>
+  <body>
+    <header class="header">
+      <Header />
+    </header>
+    <main class="hiddent">
+      <Hero />
+      <Benefits />
+      <Collaboration />
+      <Services />
+      <Pricing />
+      <Working />
+    </main>
+    <Footer />
+    <ButtonGradient />
+    <ClipPath />
+    <script>
+      // Supports weights 100-800
+      import "@fontsource-variable/sora";
+      // Supports weights 200-900
+      import "@fontsource-variable/source-code-pro";
+      //Locomotiv-Scroll
+  
+      import LocomotiveScroll from 'locomotive-scroll';
+      const locomotiveScroll = new LocomotiveScroll();
+      const scroll = new LocomotiveScroll({
+        
+          lenisOptions:{
+            smoothWheel: true,
+            wheelMultiplier: 1.5,
+            easeOutQuart: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+        }
+      });
+    </script>
+  </body>
+</html>

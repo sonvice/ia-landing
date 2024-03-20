@@ -1,0 +1,11 @@
+---
+import { play } from "../assets"
+const {class: className} = Astro.props
+---
+
+<div class=`play d-flex ${className}`>
+    <img src={play.src} alt="">
+    <div class="play__bar bg-white">
+      <div class="play__progress bg-purple"></div>
+    </div>
+  </div>

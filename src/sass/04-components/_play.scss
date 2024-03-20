@@ -1,0 +1,11 @@
+.play{
+    &__bar,&__progress{
+        height: 2px;
+    }
+    &__bar{
+        flex: 1;
+    }
+    &__progress{
+        width: 50%;
+    }
+}

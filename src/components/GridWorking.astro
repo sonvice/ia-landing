@@ -1,0 +1,35 @@
+---
+import ParagraphBrackets from "../components/ParagraphBrackets.astro";
+import {  grid } from "../assets/";
+import { roadmap } from "../constants";
+import Progress from '../components/Progress.astro';
+import { loading1,check2 } from "../assets/";
+import { Image } from "astro:assets";
+---
+
+<ul role="list" class="grid-working p-space-0 d-grid">
+  {
+    roadmap.map((item) => (
+      <li class={`grid-working__item | rounded border-light hidden ${item.colorful ? "bg-gradient" : ""}`}>
+        <div class="grid-working__content | rounded p-space-m-2xl bg-purple-400">
+          <div class="d-flex">
+            <ParagraphBrackets text={item.date} />
+           <Progress icon={item.status == 'done' ? check2: loading1} status={item.status}/>
+          </div>
+          <div class="grid-working__img-grid">
+            
+            <Image src={grid} alt="Grid image"/>
+          </div>
+          <div class="grid-working__img">
+            
+            <Image src={item.imageUrl} alt={item.title}/>
+          </div>
+          <div>
+            <h3 class="size-2 fw-regular">{item.title}</h3>
+            <p class="mt-space-m fw-200 text-purple-200">{item.text}</p>
+            </div>
+        </div>
+      </li>
+    ))
+  }
+</ul>

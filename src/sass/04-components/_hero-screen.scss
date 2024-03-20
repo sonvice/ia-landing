@@ -1,0 +1,97 @@
+@use '../01-abstracts/' as b;
+
+.hero-img{
+    max-width: 64rem;
+    aspect-ratio: 16 / 9;
+    margin-inline: auto;
+    padding: 0.125rem;
+    &__bg{
+        z-index: -1;
+        transform: translateY(-26%);
+        & img{
+            transform: scale(1.4);
+        }
+    }
+    &__screen{
+        aspect-ratio: 12 / 11;
+        overflow: hidden;
+        @include b.breakpoint(md){
+            aspect-ratio: 16 / 10;
+        }
+        @include b.breakpoint(lg){
+            aspect-ratio: 16 / 8.2;
+        }
+    }
+    &__robot{
+        transform: translateY(-2%) scale(1.5);
+        @include b.breakpoint(md){
+        transform: translateY(-14%);
+        }
+        @include b.breakpoint(lg){
+        transform: translateY(-23%);
+        }
+    }
+    & .input-art{
+        z-index: 5;
+        bottom: 0;
+        left: 1rem;
+        right: 1rem;
+        margin-bottom: 1rem;
+        @include b.breakpoint(md){
+            width: 31rem;
+            transform: translateX(-50%) translateY(-50%);
+            left: 50%;
+            margin-bottom: 0;
+        }
+    }
+
+    &__grayline{
+        height: 1.4rem;
+        background-color: var(--color-purple-500);
+        z-index: 2;
+    }
+    &__shadow1, &__shadow2{
+        height: 1.5rem;
+        border-bottom-left-radius:1.25rem;
+        border-bottom-right-radius:1.25rem;
+        background-color: var(--color-purple-400);
+        position: relative;
+    }
+    &__shadow1{
+        margin-inline: var(--space-s);
+        opacity: .9;
+        
+    }
+    &__shadow2{
+        opacity: .6;
+        margin-inline: var(--space-l);
+    }
+
+    &__icon{
+        padding: 0;
+        z-index: 5;
+        bottom: 30%;
+        --gutter:0;
+        left: -12%;
+        backdrop-filter:blur(6px);
+        border: .5px solid hsl(var(--color-purple-400-hsl),.2);
+        background-color: hsl(var(--color-purple-500-hsl),.4);
+    }
+
+    &__generation{
+        z-index: 5;
+        top: 45%;
+        right: -11%;
+        
+        background-color: hsl(var(--color-purple-500-hsl),.4);
+        backdrop-filter: blur(4px);
+        & span{
+            opacity: 0.5;
+            font-weight: 200;
+        }
+    }
+
+    &__list{
+        --gutter:4px;
+    }
+}

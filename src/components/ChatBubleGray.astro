@@ -1,0 +1,17 @@
+---
+import { brainwaveWhiteSymbol } from "../assets";
+import ChatBubbleWing from "../assets/svg/ChatBubbleWing.astro";
+const { class: className } = Astro.props;
+---
+
+<div
+data-scroll-repeat="true" data-scroll-speed=".1" data-scroll data-scroll-class="chat-buble-gray__scroll"
+  class=`chat-buble-gray relative bg-purple-300 pt-space-xs pr-space-2xs pl-space-s pb-space-l ${className}`
+>
+  Video generated!
+  <div class="chat-buble-gray__icon | d-flex absolute bg-purple rounded-sm">
+    <img src={brainwaveWhiteSymbol.src} width="26" alt="" />
+  </div>
+  <p class="absolute size--2 text-purple-200">JUST NOW</p>
+  <ChatBubbleWing fill="var(--color-purple-300)" class:list={'absolute'}/>
+</div>

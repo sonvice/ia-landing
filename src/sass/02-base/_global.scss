@@ -1,0 +1,93 @@
+/* @link https://utopia.fyi/type/calculator?c=320,16,1.2,1400,18,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+:root {
+    color-scheme: dark;
+  --space-3xs: clamp(0.25rem, 0.2315rem + 0.0926vi, 0.3125rem);
+  --space-2xs: clamp(0.5rem, 0.4815rem + 0.0926vi, 0.5625rem);
+  --space-xs: clamp(0.75rem, 0.713rem + 0.1852vi, 0.875rem);
+  --space-s: clamp(1rem, 0.963rem + 0.1852vi, 1.125rem);
+  --space-m: clamp(1.5rem, 1.4444rem + 0.2778vi, 1.6875rem);
+  --space-l: clamp(2rem, 1.9259rem + 0.3704vi, 2.25rem);
+  --space-xl: clamp(3rem, 2.8889rem + 0.5556vi, 3.375rem);
+  --space-2xl: clamp(4rem, 3.8519rem + 0.7407vi, 4.5rem);
+  --space-3xl: clamp(6rem, 5.7778rem + 1.1111vi, 6.75rem);
+  --space-4xl: clamp(8rem, 7.7037rem + 1.4815vi, 9rem);
+  --space-2xl-3xl: clamp(4rem, 3.1852rem + 4.0741vi, 6.75rem);
+  /* Custom pairs */
+  --space-s-l: clamp(1rem, 0.6296rem + 1.8519vi, 2.25rem);
+  --space-m-2xl: clamp(1.5rem, 0.6111rem + 4.4444vi, 4.5rem);
+  /*Typography*/
+  --size--2: clamp(0.6331rem, 0.7126rem + -0.0908vi, 0.6944rem);
+  --size--1: clamp(0.8333rem, 0.8302rem + 0.0157vi, 0.844rem);
+  --size-0: clamp(1rem, 0.963rem + 0.1852vi, 1.125rem);
+  --size-1: clamp(1.2rem, 1.1112rem + 0.4439vi, 1.4996rem);
+  --size-2: clamp(1.44rem, 1.2744rem + 0.8281vi, 1.999rem);
+  --size-3: clamp(1.728rem, 1.4505rem + 1.3877vi, 2.6647rem);
+  --size-4: clamp(2.0736rem, 1.6356rem + 2.1902vi, 3.552rem);
+  --size-5: clamp(2.4883rem, 1.8227rem + 3.3281vi, 4.7348rem);
+  /*Font*/
+  --ff-sora: "Sora Variable", sans-serif;
+  --ff-code: "Source Code Pro Variable", monospace;
+  --fw-200: 200;
+  --fw-regular: 400;
+  --fw-bold: 700;
+  /*Color*/
+  --color-purple: hsl(267, 100%, 71%);
+  --color-orange: hsl(3, 100%, 72%);
+  --color-yellow: hsl(36, 100%, 73%);
+  --color-purple-hsl: 267, 100%, 71%;
+  --color-orange-hsl: 3, 100%, 72%;
+  --color-yellow-hsl: 36, 100%, 73%;
+  /*Color Neutral*/
+  --color-purple-100: hsl(250, 25%, 82%);
+  --color-purple-200: hsl(251, 18%, 71%);
+  --color-purple-200-hsl: 251, 18%, 71%;
+  --color-purple-300: hsl(253, 22%, 17%);
+  --color-purple-300-hsl: 253, 22%, 17%;
+  --color-purple-400: hsl(247.5deg 23.53% 6.67%);
+  --color-purple-400-hsl: 247.5deg 23.53% 6.67%;
+  --color-purple-500: hsl(240, 16%, 31%);
+  --color-purple-500-hsl: 240, 16%, 31%;
+  --color-white: hsl(0, 0%, 100%);
+  --color-black: hsl(253, 27%, 6%);
+  --color-gray: hsla(0, 0%, 100%, 0.502);
+
+  --progress: 0;
+}
+body{
+font-family: var(--ff-sora);
+font-size: var(--base);
+background-color: var(--color-purple-400);
+}
+h1,h2,h3{
+    line-height: 1.2;
+}
+h1{
+    font-size: var(--size-4);
+}
+h2{
+    font-size: var(--size-3);
+    font-weight: var(--fw-regular);
+}
+h2,h3{
+    max-width: 24ch;
+}
+a:hover{
+    text-decoration: currentColor;
+}
+button{
+all: unset;
+}
+
+p{
+    max-width: 52ch;
+}
+img{
+    height: auto;
+}
+
+main{
+    overflow-x: hidden;
+}
+
+//Locomotive
+html.lenis{height:auto}.lenis.lenis-smooth{scroll-behavior:auto}.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}.lenis.lenis-stopped{overflow:hidden}.lenis.lenis-scrolling iframe{pointer-events:none}

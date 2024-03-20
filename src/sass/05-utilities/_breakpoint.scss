@@ -1,0 +1,22 @@
+@use "../01-abstracts/mixins" as b;
+
+
+// Clases con breakpoints
+@each $breakpoint, $value in b.$breakpointsMin {
+  @media (min-width: $value) {
+    .#{$breakpoint}\:d-none {
+      display: none;
+    }
+    .#{$breakpoint}\:d-block {
+      display: block;
+    }
+    .#{$breakpoint}\:d-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--gutter, var(--space-s));
+      justify-content: var(--horizontal-alignment, flex-start);
+      align-items: var(--vertical-alignment, center);
+    }
+    // Puedes agregar más propiedades según sea necesario
+  }
+}

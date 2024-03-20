@@ -1,0 +1,8 @@
+---
+const {status,icon} = Astro.props
+---
+
+<div class="progress | d-flex bg-white py-space-3xs px-space-s rounded-xs size--1 uppercase text-black">
+    <img src={icon.src} alt="icon" />
+    {status}
+  </div>

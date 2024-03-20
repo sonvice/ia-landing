@@ -1,0 +1,6 @@
+@use '../01-abstracts/' as b;
+.input-art{
+    background-color: var(--color-purple-400);
+    opacity: 0.8;
+    border-radius: 100px;
+}

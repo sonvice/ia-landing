@@ -1,0 +1,13 @@
+@use '../01-abstracts/'as b;
+
+.plus-l,.plus-r{
+    position: absolute;
+    top: 5.6rem;
+    pointer-events: none;
+}
+.plus-l{
+    left: calc(2.5rem - 6px);
+}
+.plus-r{
+    right: calc(2.5rem - 6px);
+}

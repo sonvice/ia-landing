@@ -1,0 +1,49 @@
+@use '../01-abstracts/' as f;
+
+.card-pricing{
+    @include f.breakpoint(md){
+        --min-max:20rem;
+    
+    }
+    &__item:nth-child(1) h3{
+        color: var(--color-yellow);
+    }
+    &__item:nth-child(2) h3{
+        color: var(--color-purple);
+    }
+    &__item:nth-child(3) h3{
+        color: var(--color-orange);
+    }
+
+    &__item{
+        display: grid;
+        grid-template-rows: repeat(1, f.px-to-rem(106px) f.px-to-rem(88px) auto auto);
+        gap: var(--space-m);
+        
+        & h4{
+            --vertical-alignment:center;
+        }
+    }
+    &__item:nth-child(2){
+        @include f.breakpoint(xl){
+            margin-top: -1rem;
+            margin-bottom: -1rem;
+            padding-block: 2.5rem;
+    
+        }
+    }
+
+    & .btn{
+        align-self: stretch;
+    }
+
+    & .svg-2{
+        width: 100%;
+    }
+
+    &__features > li{
+        border-top: 1px solid var(--color-purple-300);
+        flex-wrap: nowrap;
+        --vertical-alignment:start;
+    }
+}

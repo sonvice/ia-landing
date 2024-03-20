@@ -1,0 +1,28 @@
+.radar{
+    width: 78rem;
+    aspect-ratio: 1 / 1;
+    right: 50%;
+    top: 10rem;
+    transform: translateX(50%);
+    z-index: -1;
+    border: 1px solid hsl(var(--color-purple-200-hsl),.1);
+    &__line1,&__line2,&__line3,&__line4{
+        aspect-ratio: 1 / 1;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid hsl(var(--color-purple-200-hsl),.1);
+    }
+    &__line1{
+        width: 65.875rem;
+    }
+    &__line2{
+        width: 51.375rem;
+    }
+    &__line3{
+        width: 36.125rem;
+    }
+    &__line4{
+        width: 23.125rem;
+    }
+}

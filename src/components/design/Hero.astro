@@ -1,0 +1,137 @@
+---
+import Section from "../Section.astro";
+import PlusSvg from "../../assets/svg/PlusSvg.astro";
+import { curve, heroBackground, notification1, robot } from "../../assets";
+import Button from "../Button.astro";
+import ButtonSvg from "../../assets/svg/ButtonSvg.astro";
+import InputArt from "../InputArt.astro";
+import { companyLogos, heroIcons, notificationImages } from "../../constants";
+import { Image } from "astro:assets";
+import Radar from '../Radar.astro'
+import Stars from '../Stars.astro'
+---
+
+<Section class:list={`relative hero`}>
+  <div class=" | container relative">
+    <div class="hero__box | pt-space-2xl-3xl text-center flow">
+      <h1>
+        Explore the Possibilities of AI Chatting with <span
+          class="relative d-inline"
+        >
+          <Image
+            class:list={`hero__curve | absolute`}
+            src={curve}
+            alt="curve decoration"
+          />
+          Brainwave</span
+        >
+      </h1>
+      <p class="text-purple-100 size-0">
+        Unleash the power of AI within Brainwave. Upgrade your productivity with
+        Brainwave, the open AI chat app.
+      </p>
+      <Button text="Get started" class:list={`text-black px-space-s uppercase`}>
+        <ButtonSvg slot="btn-white" white="white" />
+      </Button>
+    </div>
+    <div class="hero-img | relative mt-space-3xl bg-gradient rounded">
+      <div class="hero-img__bg absolute">
+        <Image
+          src={heroBackground}
+          loading="eager"
+          alt="Robot con ojos iluminados"
+        />
+      </div>
+      <div class="hero-img__screen | rounded relative">
+        <div class="hero-img__grayline | relative"></div>
+        <Image
+          class:list={"hero-img__robot"}
+          loading="eager"
+          src={robot}
+          alt="Robot color blanco con ojos iluminados"
+        />
+        <InputArt class:list={`absolute`} />
+      </div>
+      <ul
+        data-scroll
+        data-scroll-speed=".1"
+        role="list"
+        class="hero-img__icon | d-none xl:d-flex rounded absolute"
+      >
+        {
+          heroIcons.map((item) => (
+            <li class="p-space-s">
+              <Image src={item} alt="social icon" />
+            </li>
+          ))
+        }
+      </ul>
+      <div
+        data-scroll
+        data-scroll-speed=".1"
+        class="hero-img__generation | d-none xl:d-block p-space-s rounded absolute"
+      >
+        <div class="d-flex">
+          <Image
+            class:list={"rounded"}
+            src={notification1}
+            width={64}
+            alt="Pato animado en una moto"
+          />
+          <div>
+            <p class="m-space-0 size--1 fw-bold text-white">Code generation</p>
+            <div class="d-flex">
+              <ul
+                role="list"
+                class="hero-img__list | my-space-3xs d-flex p-space-0"
+              >
+                {
+                  notificationImages.map((item) => (
+                    <li>
+                      <Image
+                        class:list={"rounded"}
+                        width={item.width / 2}
+                        src={item}
+                        alt="Perfiles avatar"
+                      />
+                    </li>
+                  ))
+                }
+              </ul>
+              <span class="text-purple-200">1m ago</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-img__shadow1"></div>
+      <div class="hero-img__shadow2"></div>
+     
+    </div>
+    <div class="hero__logo | d-none lg:d-block text-center">
+      <p class="fw-regular size--1 text-purple-200 mt-space-3xl">
+        HELPING PEOPLE CREATE BEAUTIFUL CONTENT AT
+      </p>
+      <ul
+        data-scroll-class="hero__scroll-class"
+        data-scroll-repeat="true"
+        data-scroll
+        role="list"
+        class="hero__logo-list | p-space-0 d-flex mt-space-2xl mb-space-0"
+      >
+        {
+          companyLogos.map((item) => (
+            <li>
+              <Image src={item} alt="company logos" />
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <Radar class:list={'absolute'}/>
+  </div>
+  <PlusSvg class:list={`plus-l `} />
+  <PlusSvg class:list={`plus-r `} />
+  <PlusSvg class:list={`plus-l plus-buttom`} />
+  <PlusSvg class:list={`plus-r plus-buttom`} />
+  <Stars class:list={'absolute'}/>
+</Section>

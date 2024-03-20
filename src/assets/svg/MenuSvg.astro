@@ -1,0 +1,22 @@
+---
+const { openNavigation } = Astro.props;
+---
+
+<svg width="20" height="12" viewBox="0 0 20 12" overflow="visible">
+  <rect
+  class="rect1"
+    y={openNavigation ? "5" : "0"}
+    width="20"
+    height="2"
+    rx="1"
+    fill="white"
+    transform={`rotate(${openNavigation ? "45" : "0"})`}></rect>
+  <rect 
+  class="rect2"
+    y={openNavigation ? "5" : "10"}
+    width="20"
+    height="2"
+    rx="1"
+    fill="white"
+    transform={`rotate(${openNavigation ? "-45" : "0"})`}></rect>
+</svg>

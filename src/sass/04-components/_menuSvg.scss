@@ -1,0 +1,11 @@
+ .open .rect1,.open .rect2 {
+    transform-origin: center;
+    transition: .3s ease;
+}
+
+.open .rect1{
+    transform: rotate(45deg) translateY(5px);
+}
+.open .rect2{
+    transform: rotate(-45deg) translateY(-5px);
+}

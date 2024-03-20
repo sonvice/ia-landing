@@ -1,0 +1,16 @@
+---
+import { Image } from "astro:assets";
+import { smallSphere, stars } from "../assets";
+const { class:className } = Astro.props
+
+---
+
+<div class=`sphere | lg:d-flex ${className}`>
+  <div class="relative">
+    
+    <Image src={smallSphere} width={smallSphere.width / 2} alt="Sphere"/>
+    <div class="sphere__start absolute">
+      <img src={stars.src} alt="starts" />
+    </div>
+  </div>
+</div>

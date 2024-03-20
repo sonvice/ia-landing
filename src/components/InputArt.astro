@@ -1,0 +1,13 @@
+---
+import { loading } from '../assets' 
+const {class:className } = Astro.props
+---
+<div class=`input-art | d-flex px-space-m py-space-xs ${className}`>
+    <img
+      src={loading.src}
+      width={loading.width / 3}
+      height={loading.height / 3}
+      alt=""
+    />
+    <span>AI is generating</span>
+  </div>

@@ -1,0 +1,52 @@
+@use "../01-abstracts/" as b;
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  --horizontal-alignment: space-between;
+  border-bottom: 0.6px solid var(--color-purple-300);
+  background-color: var(--color-purple-400);
+
+  @include b.breakpoint-down(lg) {
+    padding: var(--space-s);
+  }
+
+  &__link {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--color-purple-200);
+    font-family: var(--ff-code);
+    font-size: var(--size--1);
+    font-weight: var(--fw-bold);
+    padding-inline: var(--space-s);
+    &:hover {
+      color: var(--color-white);
+      transition: 0.3s ease;
+    }
+    @include b.breakpoint(xl){
+      padding-inline: var(--space-l);
+    }
+  }
+
+  .nav {
+    --gutter:0;
+    @include b.breakpoint-down(lg) {
+     
+      flex-direction: column;
+      position: fixed;
+      top: 4rem;
+      left: 0;
+      min-width: 100%;
+      background-color: var(--color-purple-400);
+        min-height: 100vh;
+        --horizontal-alignment:center;
+        a {
+            font-weight: 500;
+            color: var(--color-white);
+        font-size: var(--size-2);
+        padding: var(--space-s);
+      }
+      
+    }
+  }
+}

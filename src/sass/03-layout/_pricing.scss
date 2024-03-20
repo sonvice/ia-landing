@@ -1,0 +1,30 @@
+@use "../01-abstracts/" as b;
+.pricing {
+  &__box {
+    @include b.breakpoint(lg) {
+      margin-top: var(--space-4xl);
+    }
+  }
+
+  &__bracket {
+    --horizontal-alignment: center;
+  }
+
+  &__details {
+    letter-spacing: 1px;
+  }
+  &__grid-line1,
+  &__grid-line2 {
+    width: 80rem;
+    top: 50%;
+  }
+
+  &__grid-line1 {
+    right: 100%;
+    transform: translateY(-50%);
+  }
+  &__grid-line2 {
+    left: 100%;
+    transform: translateY(-50%) scaleX(-1);
+  }
+}

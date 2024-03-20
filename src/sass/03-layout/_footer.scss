@@ -1,0 +1,21 @@
+@use '../01-abstracts/'as b;
+
+.footer{
+    &__box{
+        --horizontal-alignment:space-between;
+    }
+    &__list li:hover a{
+        background-color: var(--color-purple-300);
+    }
+    &__list a {
+        transition: .3s ease;
+    }
+
+    @include b.breakpoint(md){
+    
+        & .plus-l,.plus-r{
+            top: -6px;
+        }
+    }
+
+}

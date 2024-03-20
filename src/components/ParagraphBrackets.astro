@@ -1,0 +1,11 @@
+---
+import Brackets from '../assets/svg/Brackets.astro'
+const {text, class:className} = Astro.props
+
+---
+
+<div class=`paragraph-brackets d-flex ${className}`>
+    <Brackets position="left"/> 
+    <p class="text-purple-200 fw-200 uppercase size--1">{text}</p>
+    <Brackets position="right"/>
+</div>

@@ -1,0 +1,8 @@
+.flow>*+* {
+    margin-top: var(--flow-space, var(--space-s));
+  }
+
+// :where(.flow :not(:first-child) ){
+//   margin-top: var(--flow-space, var(--space-s));
+// }
+  

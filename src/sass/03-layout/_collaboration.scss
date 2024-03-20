@@ -1,0 +1,140 @@
+@use '../01-abstracts/' as f;
+.collaboration{
+
+    @include f.breakpoint(lg){
+        &::before{
+            content: '';
+            height: 0.5px;
+            background-color: var(--color-purple-300);
+            position: absolute;
+            top: 0;
+            left: 2.5rem;
+            right: 2.5rem;
+            pointer-events: none;
+        }
+        
+     
+    }
+
+    &__block{
+        --min-max: 30%;
+       
+    }
+
+    &__text{
+        max-width: 25rem;
+        & p{
+            max-width: 32ch;
+        }
+    }
+
+    &__symbol{
+        --gutter:0;
+        & ul{
+            padding: 0;
+            margin: 0;
+            
+        }
+    }
+    &__symbol,&__r1,&__r2,&__r3{
+        aspect-ratio: 1 / 1;
+       
+        --horizontal-alignment:center;
+    }
+
+    &__r1{
+        width: 13rem;
+        @include f.breakpoint(md){
+            width: 16rem;
+        
+        }
+        
+    }
+    &__r2{
+        width: 6rem;
+        padding: 0.2rem;
+    }
+    &__r3{
+        background-color: var(--color-purple-400);
+        width: 100%;
+        height: 100%;
+    }
+
+    &__icon{
+        top: 0;
+        transform-origin: bottom;
+        height: 50%;
+        left: 50%;
+        margin-left: -1.6rem;
+
+        &-border{
+            width: 3.2rem;
+            height: 3.2rem;
+            border-radius: 0.75rem;
+            top: calc(-3.2rem / 2);
+            
+        }
+    }
+
+    &__icon:nth-child(1){
+        transform: rotate(0deg);
+    }
+    &__icon:nth-child(2){
+        transform: rotate(45deg);
+    }
+    &__icon:nth-child(3){
+        transform: rotate(90deg);
+    }
+    &__icon:nth-child(4){
+        transform: rotate(135deg);
+    }
+    &__icon:nth-child(5){
+        transform: rotate(180deg);
+    }
+    &__icon:nth-child(6){
+        transform: rotate(225deg);
+    }
+    &__icon:nth-child(7){
+        transform: rotate(270deg);
+    }
+    &__icon:nth-child(8){
+        transform: rotate(315deg);
+    }
+
+    & .plus-l,& .plus-r{
+        top: -6px;
+    }
+
+    &__block-icons{
+        margin-inline: auto;
+        transition: .3s ease;
+        @include f.breakpoint(xl){
+            transform: translateX(-25%);
+            margin-inline: initial;
+            margin-left: auto;
+        }
+        & p{
+            max-width: 32ch;
+            margin-top: var(--space-2xl);
+            @include f.breakpoint(lg){
+                margin-top: 0;
+            }
+            
+        }
+    }
+
+    &__curve1,&__curve2{
+        top: 50%;
+    }
+
+    &__curve1{
+        right: 100%;
+        width: 32rem;
+        margin-right: 2.5rem;
+    }
+    &__curve2{
+        width: f.px-to-rem(162px);
+        left: 100%;
+        margin-left: 2.5rem;
+    }
+}

@@ -1,0 +1,45 @@
+---
+import { benefits } from "../../constants";
+import Section from "../Section.astro";
+import Arrow from "../../assets/svg/Arrow.astro";
+import { Image } from "astro:assets";
+---
+
+<Section class:list={`py-space-3xl relative`}>
+  <div class="container" data-scroll-section>
+    <h2 class="m-space-auto text-center">
+      Chat Smarter, Not Harder with Brainwave
+    </h2>
+    <ul data-scroll role="list" class="benefits | d-grid mt-space-3xl pl-space-0">
+      {
+        benefits.map((item) => (
+          <li class="benefits__item | relative">
+            <div class="benefits__clipPath absolute">
+              <div class="benefits__bg absolute">
+                <Image src={item.imageUrl} alt="Robot azul" />
+              </div>
+            </div>
+            <div class="benefits__border absolute">
+              <img src={item.backgroundUrl} alt="" />
+            </div>
+            <div class="benefits__text | p-space-l d-flex relative">
+              <div class="flow">
+                <h3>{item.title}</h3>
+                <p class="text-purple-200 fw-regular">{item.text}</p>
+              </div>
+              <div class="benefits__icon d-flex">
+                <Image alt="icon" src={item.iconUrl} />
+                <p class="uppercase size--1 fw-bold d-flex ml-space-auto">
+                  explore more{" "}
+                  <span>
+                    <Arrow class:list={`ml-space-3xs`} />
+                  </span>{" "}
+                </p>
+              </div>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Section>

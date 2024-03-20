@@ -1,0 +1,26 @@
+---
+import Section from "../Section.astro"
+import Sphere from '../Sphere.astro'
+import Brackets from "../../assets/svg/Brackets.astro"
+import CardPricing from '../CardPricing.astro'
+import { lines } from "../../assets"
+---
+<Section class:list={'pricing py-space-3xl relative'}>
+    <div class="container">
+            <Sphere class:list={'d-none'}/>
+        <div class="pricing__box">
+            <div class="pricing__bracket | d-flex mb-space-s"><Brackets position="left"/> 
+                <p class="text-purple-200 fw-200 uppercase size--1">GET STARTED WITH BRAINWAVE</p>
+                <Brackets position="right"/>
+            </div>
+            <h2 class="mx-space-auto text-center mb-space-2xl">Pay once, use forever</h2>
+            <div class="pricing__grid | relative d-grid">
+                <CardPricing/>
+                <div class="pricing__grid-line1 d-none xl:d-block absolute"><img src={lines.src} alt="Lines"></div>
+                <div class="pricing__grid-line2 d-none xl:d-block absolute"><img src={lines.src} alt="Lines"></div>
+            </div>
+            <div class="pricing__details | text-center mt-space-m"><a href="#" class="text-white size--1 fw-bold uppercase">see the full details</a></div>
+        </div>
+    </div>
+
+</Section>

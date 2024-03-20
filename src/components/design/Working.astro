@@ -1,0 +1,21 @@
+---
+import Section from "../Section.astro"
+import ParagraphBrackets from '../ParagraphBrackets.astro'
+import GridWorking from '../GridWorking.astro'
+import ButtonSvg from "../../assets/svg/ButtonSvg.astro"
+import Button from "../Button.astro"
+---
+<Section class:list={'working relative py-space-4xl'}>
+    <div class="container">
+            <ParagraphBrackets text="ready to get started" class:list={'mb-space-s'}/>
+        <h2 class="mx-space-auto text-center mb-space-2xl">What we’re working on</h2>
+        <GridWorking/>
+        <div class="d-flex mt-space-5xl">
+
+            <Button  text="our roadmap" class:list={'px-space-s m-space-auto uppercase'}>
+                <ButtonSvg slot="btn-svg"></ButtonSvg>
+            </Button>
+        </div>
+    </div>
+ 
+</Section>

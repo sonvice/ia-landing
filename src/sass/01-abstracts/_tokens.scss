@@ -1,0 +1,72 @@
+/*@link https://utopia.fyi/space/calculator?c=320,16,1.2,1400,18,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6|10,m-2xl&g=s,l,xl,12 */
+/* Typography */
+$text-sizes:(
+     /* size -2: 11.1111px → 10.1301px */
+  "size--2": clamp(0.6331rem, 0.7126rem + -0.0908vi, 0.6944rem),
+  /* size--1: 13.3333px → 13.5034px */
+  "size--1": clamp(0.8333rem, 0.8302rem + 0.0157vi, 0.844rem),
+  /* size :0 16px → 18px */
+  "size-0": clamp(1rem, 0.963rem + 0.1852vi, 1.125rem),
+  /* size 1: 19.2px → 23.994px */
+  "size-1": clamp(1.2rem, 1.1112rem + 0.4439vi, 1.4996rem),
+  /* size 2: 23.04px → 31.984px */
+  "size-2": clamp(1.44rem, 1.2744rem + 0.8281vi, 1.999rem),
+  /* size 3: 27.648px → 42.6347px */
+  "size-3": clamp(1.728rem, 1.4505rem + 1.3877vi, 2.6647rem),
+  /* size 4: 33.1776px → 56.832px */
+  "size-4": clamp(2.0736rem, 1.6356rem + 2.1902vi, 3.552rem),
+  /* size 5: 39.8131px → 75.7571px */
+  "size-5": clamp(2.4883rem, 1.8227rem + 3.3281vi, 4.7348rem),
+);
+
+
+/* Space */
+$spaces:(
+    "space-auto":auto,
+    "space-0":0,
+  /* Space 3xs: 4px → 5px */
+  "space-3xs": clamp(0.25rem, 0.2315rem + 0.0926vi, 0.3125rem),
+  /* Space 2xs: 8px → 9px */
+  "space-2xs": clamp(0.5rem, 0.4815rem + 0.0926vi, 0.5625rem),
+  /* Space xs: 12px → 14px */
+  "space-xs": clamp(0.75rem, 0.713rem + 0.1852vi, 0.875rem),
+  /* Space s: 16px → 18px */
+  "space-s": clamp(1rem, 0.963rem + 0.1852vi, 1.125rem),
+  /* Space m: 24px → 27px */
+  "space-m": clamp(1.5rem, 1.4444rem + 0.2778vi, 1.6875rem),
+  /* Space l: 32px → 36px */
+  "space-l": clamp(2rem, 1.9259rem + 0.3704vi, 2.25rem),
+  /* Space xl: 48px → 54px */
+  "space-xl": clamp(3rem, 2.8889rem + 0.5556vi, 3.375rem),
+  /* Space 2xl: 64px → 72px */
+  "space-2xl": clamp(4rem, 3.8519rem + 0.7407vi, 4.5rem),
+  /* Space 3xl: 96px → 108px */
+  "space-3xl": clamp(6rem, 5.7778rem + 1.1111vi, 6.75rem),
+  "space-4xl": clamp(8rem, 7.7037rem + 1.4815vi, 9rem),
+  "space-5xl": clamp(10rem, 9.6296rem + 1.8519vi, 11.25rem),
+    /* Space 2xl-3xl: 64px → 108px */
+    "space-2xl-3xl": clamp(4rem, 3.1852rem + 4.0741vi, 6.75rem),
+      /* Space s-l: 16px → 36px */
+    "space-m-2xl": clamp(1.5rem, 0.6111rem + 4.4444vi, 4.5rem),
+);
+
+
+/* Colors */
+$primary: (
+  "purple": hsl(267, 100%, 71%),
+  "orange": hsl(3, 100%, 72%),
+  "yellow": hsl(36, 100%, 73%),
+  'blue':blue,
+);
+
+//### Neutral
+$neutral: (
+  "purple-100": hsl(250, 25%, 82%),
+  "purple-200": hsl(251, 18%, 71%),
+  "purple-300": hsl(253, 22%, 17%),
+  "purple-400": hsl(253, 27%, 6%),
+  "purple-500": hsl(252, 21%, 9%),
+  "white": hsl(0, 0%, 100%),
+  "black": hsl(0, 0%, 0%),
+  "gray": hsla(0, 0%, 100%, 0.502),
+);

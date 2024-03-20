@@ -1,0 +1,23 @@
+@use '../01-abstracts/' as b;
+
+.section{
+    &__line-l,&__line-r{
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: .5px;
+        background-color: var(--color-purple-300);
+        z-index: -1;
+        display: none;
+        @include b.breakpoint(md){
+            display: block;
+        }
+    }
+    &__line-l{
+        left: 2.5rem;
+    }
+    &__line-r{
+        right: 2.5rem;
+    }
+
+}

@@ -1,0 +1,36 @@
+---
+import { pricing } from "../constants";
+import Button from "./Button.astro";
+import ButtonSvg from "../assets/svg/ButtonSvg.astro";
+import { check } from "../assets";
+---
+
+<ul role="list" class="p-space-0 card-pricing d-grid">
+  {
+    pricing.map((item) => (
+      <li class="card-pricing__item  border-light rounded p-space-m">
+        <div class="flow">
+          <h3 class="size-2 fw-regular">{item.title}</h3>
+          <p class="fw-200 text-purple-200">{item.description}</p>
+        </div>
+        <h4 class="size-5 d-flex">
+          {item.price && <span class="size-3 fw-regular">$</span>}
+          {item.price}
+        </h4>
+        <Button
+          text={item.price ? "get started" : "contact us"}
+          class:list={`px-space-s uppercase text-center ${item.price ? "text-black" : "text-white"}`}
+        >
+          <ButtonSvg slot="btn-white" white={!!item.price} />
+        </Button>
+        <ul role="list" class="card-pricing__features fw-regular px-space-0">
+          {item.features.map((item) => (
+            <li class="d-flex py-space-s">
+              <img src={check.src} alt="" /> <p>{item}</p>
+            </li>
+          ))}
+        </ul>
+      </li>
+    ))
+  }
+</ul>

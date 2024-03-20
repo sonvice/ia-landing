@@ -1,0 +1,52 @@
+@use '../01-abstracts/' as b;
+.hero{
+    position: relative;
+    padding-top: var(--space-3xl);
+
+    @include b.breakpoint(lg){
+        &::before{
+            content: '';
+            height: 0.5px;
+            background-color: var(--color-purple-300);
+            position: absolute;
+            top: 57rem;
+            left: 2.5rem;
+            right: 2.5rem;
+            pointer-events: none;
+        }
+    }
+
+
+    &__curve{ 
+        bottom: -.6rem;
+    }
+
+    p{
+        margin-inline: auto;
+    }
+
+    &__box{
+        --flow-space:var(--space-l);
+    }
+
+    &__logo-list{
+        --horizontal-alignment:space-between;
+        opacity: 0;
+        transition: opacity 600ms ease 100ms;
+    }
+
+    &__scroll-class{
+        opacity: 1;
+    }
+
+    & .plus-buttom{
+        top: 56.7rem;
+    }
+
+    & .stars{
+        top: 20rem;
+        transform: translateX(50%) scale(1.1);
+        right: 50%;
+    }
+
+}

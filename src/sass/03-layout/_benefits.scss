@@ -1,0 +1,61 @@
+@use '../01-abstracts/' as b;
+
+.benefits{
+    --gap:var(--space-xl);
+    --min-max:16rem;
+    @include b.breakpoint(lg){
+        --min-max:18rem;
+    }
+    &__clipPath{
+        background-color: hsl(var(--color-purple-400-hsl));
+        inset: 0;
+        clip-path: url(#benefits);
+    }
+    &__item{
+        aspect-ratio: 4 / 3.5;
+        &:hover .benefits__bg {
+            opacity: .2;
+        }
+        &:nth-child(2), &:nth-child(4){
+            &::after{
+                content: '';
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left:25%;
+                background: radial-gradient(circle, rgba(174,107,255,0.5466561624649859) 0%, rgba(14,13,21,1) 70%);
+                z-index: -1;
+            }
+        }
+    }
+
+    &__bg{
+        opacity: 0;
+        transition: .3s ease-in-out;
+        height: 100%;
+        width: 100%;
+        & img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__border{
+        inset: 0;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__text{
+        min-height: 100%;
+        top: 0;
+        z-index: 2;
+    }
+    &__icon{
+        flex-grow: 1;
+    }
+}

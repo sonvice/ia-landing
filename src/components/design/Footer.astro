@@ -1,0 +1,32 @@
+---
+import { socials } from "../../constants";
+import Section from "../Section.astro";
+import PlusSvg from "../../assets/svg/PlusSvg.astro";
+---
+
+<footer>
+  <Section class:list={"relative footer"}>
+    <div class="footer__box | container d-flex py-space-m">
+      <p class="size--1 fw-200 mt-space-m text-purple-200">
+        © 2024. All rights reserved.
+      </p>
+      <ul role="list" class="footer__list d-flex px-space-0">
+        {
+          socials.map((item) => (
+            <li>
+              <a href="#" class="p-space-xs d-block bg-purple-500 rounded-full">
+                <img
+                  src={item.iconUrl.src}
+                  width={item.iconUrl.width}
+                  alt={item.title}
+                />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <PlusSvg class:list={`plus-r`} />
+    <PlusSvg class:list={`plus-l`} />
+  </Section>
+</footer>

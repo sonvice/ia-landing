@@ -1,0 +1,10 @@
+---
+const { text } = Astro.props;
+const { class: className } = Astro.props
+---
+<button class=`btn | ${className}`>
+    <slot name="menu-svg" />
+    <slot name="btn-white"/>
+    <slot name="btn-svg"/>
+    <span class="relative">{text}</span>
+</button>

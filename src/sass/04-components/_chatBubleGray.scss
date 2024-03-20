@@ -1,0 +1,35 @@
+@use '../01-abstracts/'as b;
+.chat-buble-gray{
+    max-width: 14rem;
+    border-top-left-radius: var(--space-xs);
+    border-top-right-radius:var(--space-xs);
+    border-bottom-right-radius: var(--space-xs);
+    font-family: var(--ff-code);
+    opacity: 0;
+    transition: opacity 600ms ease 350ms;
+
+    @include b.breakpoint(lg){
+        max-width: 17rem;
+    }
+    & svg{
+        right: 100%;
+        bottom: 0;
+        transform: scaleX(-1);
+    }
+    &__icon{
+        --horizontal-alignment:center;
+        width: 2.25rem;
+        height: 2.25rem;
+        z-index: 5;
+        bottom:-1.125rem;
+    }
+    & p{
+        right: 10px;
+        bottom: 6px;
+        letter-spacing: 1px;
+    }
+
+    &__scroll{
+        opacity: 1;
+    }
+}

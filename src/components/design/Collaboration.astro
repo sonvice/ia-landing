@@ -1,0 +1,72 @@
+---
+import { brainwaveSymbol, check, curve1, curve2 } from "../../assets";
+import PlusSvg from "../../assets/svg/PlusSvg.astro";
+import { collabApps, collabContent } from "../../constants";
+import Section from "../Section.astro";
+import Button from "../Button.astro";
+import ButtonSvg from "../../assets/svg/ButtonSvg.astro";
+---
+
+<Section class:list={`collaboration relative py-space-3xl`}>
+  <div class="collaboration__block container d-flex">
+    <div class="collaboration__text">
+      <h2>AI Chat App for seamless collaboration</h2>
+      <ul role="list" class="px-space-0 my-space-l fw-200 flow">
+        {
+          collabContent.map((item) => (
+            <li class="flow py-space-2xs">
+              <div class="d-flex">
+                <img src={check.src} alt="" />
+                <h3 class="fw-regular">{item.title}</h3>
+              </div>
+              <p class="text-purple-200">{item.text && item.text}</p>
+            </li>
+          ))
+        }
+      </ul>
+      <Button class:list={`px-space-s uppercase`} text="try it now">
+        <ButtonSvg slot="btn-svg" />
+      </Button>
+    </div>
+    <div class="collaboration__block-icons">
+      <p class="mb-space-3xl text-purple-200 fw-200">
+        With smart automation and top-notch security, it's the perfect solution
+        for teams looking to work smarter.
+      </p>
+      <div>
+        <div class="collaboration__symbol | border-light relative d-flex rounded-full">
+          <div class="collaboration__r1 | border-light d-flex rounded-full">
+            <div class="collaboration__r2 | d-flex bg-gradient rounded-full">
+              <div class="collaboration__r3 | d-flex rounded-full">
+                <img src={brainwaveSymbol.src} alt="" />
+              </div>
+            </div>
+          </div>
+          <ul role="list">
+            {
+              collabApps.map((item) => (
+                <li class="collaboration__icon absolute">
+                  <div class="collaboration__icon-border | bg-purple-300 relative d-flex border-light">
+                    <img
+                      src={item.icon.src}
+                      width={item.width}
+                      alt={item.title}
+                    />
+                  </div>
+                </li>
+              ))
+            }
+          </ul>
+          <div class="collaboration__curve1 | d-none xl:d-block absolute">
+            <img src={curve1.src} width={curve1.width} alt="">
+          </div>
+          <div class="collaboration__curve2 | d-none xl:d-block absolute">
+            <img src={curve2.src} width={curve2.width} alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <PlusSvg class:list={`plus-r`} />
+  <PlusSvg class:list={`plus-l`} />
+</Section>

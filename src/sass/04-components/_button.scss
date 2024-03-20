@@ -1,0 +1,29 @@
+@use '../01-abstracts/' as f;
+
+.btn{
+    font-family: var(--ff-code);
+    font-weight: var(--fw-bold);
+    position: relative;
+    height: f.px-to-rem(44px);
+    font-size: var(--size--1);
+    cursor: pointer;
+    &:hover span{
+        color: var(--color-purple);
+        transition: .3s ease;
+    }
+    & .svg-1,.svg-2,.svg-3{
+        position: absolute;
+        top: 0;
+    }
+    & .svg-1{
+      left: 0;
+    }
+    & .svg-2{
+      left: 1rem;
+      max-width: calc(100% - 2.3rem);
+    
+    }
+    & .svg-3{
+      right: 0;
+    }
+}

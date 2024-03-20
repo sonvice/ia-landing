@@ -1,0 +1,54 @@
+---
+import {navigation } from '../../constants'
+import { brainwave } from '../../assets'
+import Button from '../Button.astro';
+import MenuSvg from '../../assets/svg/MenuSvg.astro'
+import ButtonSvg from '../../assets/svg/ButtonSvg.astro';
+
+---
+<div class="d-flex px-space-l uppercase">
+<a href='#logo'>
+    <img src={brainwave.src} alt="Logo">
+</a>
+<nav class="nav | d-flex d-none lg:d-flex">
+    {navigation.map((item)=>(
+        <a href={item.url} class={`header__link | py-space-l ${item.onlyMobile ? 'lg:d-none':''}`}>{item.title}</a>
+    ))}
+</nav>
+<div class="d-flex">
+    <a href="#account" class="header__link | d-none lg:d-block">New account</a>
+    <Button text="sign in" class:list={"d-none lg:d-block px-space-s"}>
+        <ButtonSvg slot='btn-svg'></ButtonSvg>
+    </Button>
+</div>
+<Button class:list={`lg:d-none burger px-space-s`}>
+    <span class="menu-svg" slot="menu-svg"><MenuSvg/></span>
+    <ButtonSvg slot='btn-svg'></ButtonSvg>
+</Button>
+</div>
+
+
+<script>
+import { disablePageScroll, enablePageScroll } from 'scroll-lock';
+const burgerMenu = document.querySelector('.burger')
+const nav = document.querySelector('.nav')
+const navItems = document.querySelectorAll('nav > a')
+const menuSvg = document.querySelector('.menu-svg')
+
+burgerMenu.addEventListener('click', ()=>{
+    nav.classList.toggle('d-none')
+    menuSvg.classList.toggle('open')
+    nav.classList.contains('d-none') ? enablePageScroll(): disablePageScroll();
+})
+
+navItems.forEach((item)=>{
+    item.addEventListener('click',(e)=>{
+        console.log(e);
+        if(item.classList.contains('header__link')){
+            nav.classList.add('d-none') 
+            menuSvg.classList.toggle('open')
+        }
+    })
+})
+
+</script>

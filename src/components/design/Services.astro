@@ -1,0 +1,100 @@
+---
+import { check, gradient, service1, service2, service3 } from "../../assets";
+import Section from "../Section.astro";
+import { brainwaveServices, brainwaveServicesIcons } from "../../constants";
+import InputArt from "../InputArt.astro";
+import ChatBubbleWing from '../../assets/svg/ChatBubbleWing.astro'
+import Play from '../Play.astro';
+import ChatBubleGray from '../ChatBubleGray.astro'
+import { Image } from "astro:assets";
+---
+
+<Section class:list={`relative py-space-3xl`}>
+    <div class="text-center flow mb-space-2xl">
+      <h2 class="m-space-auto">Generative AI made for creators.</h2>
+      <p class="text-purple-200 fw-200 m-space-auto">
+        Brainwave unlocks the potential of AI-powered applications
+      </p>
+    </div>
+  <div class="services | relative container">
+    <div class="services-ai | hidden border-light rounded">
+      <div class="services-ai__img | hidden">
+        <Image src={service1} alt="Smartest AI" />
+      </div>
+      <div class="services-ai__text">
+        <h3 class="size-2 fw-regular">Smartest AI</h3>
+        <p class="fw-200 mt-space-m text-purple-200">
+          Brainwave unlocks the potential of AI-powered applications
+        </p>
+        <ul role="list" class="flow p-space-0 mt-space-xl mb-space-0">
+          {
+            brainwaveServices.map((item) => (
+              <li class="d-flex pt-space-s">
+                <img src={check.src} width={check.width} alt="" /> <p>{item}</p>
+                
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <InputArt class:list={`border-light`} />
+    </div>
+    <div class="services-media | mt-space-s">
+      <div class="services-media__photo | hidden relative rounded border-light">
+        <div class="services-media__photo-img | relative">
+         
+          <Image src={service2} alt="Photo editing"/>
+        </div>
+        <div class="services-media__block | d-flex absolute">
+          <div data-scroll-repeat="true" data-scroll-speed=".1" data-scroll data-scroll-class="services-media__scroll" class="services-media__photo-msj | relative p-space-s bg-black">
+            Hey Brainwave, enhance this photo
+            <ChatBubbleWing class:list={`absolute`}/>
+          </div>
+          <div class="services-media__photo-text | flow px-space-xl">
+            <h3 class="fw-regular size-2">Photo editing</h3>
+            <p class="fw-200 text-purple-200">
+              Automatically enhance your photos using our AI app's photo editing
+              feature. Try it now!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="services-media__video | d-flex bg-purple-500 p-space-s rounded border-light"
+        >
+        <div class="services-media__icons | pt-space-m">
+          <h3 class="fw-regular size-2">Video generation</h3>
+          <p class="fw-200 text-purple-200 mt-space-s">
+            The world’s most powerful AI photo and video art generation engine.
+            What will you create?
+          </p>
+          <ul role="list" class="d-flex pl-space-0 mt-space-l">
+            {
+              brainwaveServicesIcons.map((item, index) => (
+                <li
+                  class={`rounded bg-purple-300 ${index == 2 ? "bg-gradient disc" : ""}`}
+                >
+                  <div
+                    class={`services-media__icon d-flex ${index == 2 ? "rounded bg-purple-300" : ""}`}
+                  >
+                    <img src={item.src} width={item.width} alt="" />
+                  </div>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <div class="services-media__video-img | bg-purple-400 rounded hidden mt-space-auto relative">
+          
+          <Image src={service3} alt="Video generation"/>
+            <ChatBubleGray class:list={'absolute'}/>
+            <Play class:list={'absolute p-space-s'}/>
+        </div>
+      </div>
+    </div>
+    <div class="services-media__gradient |  absolute">
+      
+      <Image src={gradient} alt="Gradiente"/>
+    </div>
+  </div>
+</Section>

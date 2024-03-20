@@ -1,0 +1,25 @@
+{
+  "name": "",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@fontsource-variable/sora": "^5.0.17",
+    "@fontsource-variable/source-code-pro": "^5.0.18",
+    "astro": "^4.4.15",
+    "astro-seo": "^0.8.3",
+    "autoprefixer": "^10.4.18",
+    "locomotive-scroll": "^5.0.0-beta.11",
+    "sass": "^1.71.1",
+    "scroll-lock": "^2.1.5"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^5.0.0"
+  }
+}
