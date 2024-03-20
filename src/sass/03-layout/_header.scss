@@ -7,6 +7,11 @@
   border-bottom: 0.6px solid var(--color-purple-300);
   background-color: var(--color-purple-400);
 
+  & > div {
+    @include b.breakpoint(lg) {
+      padding-inline: var(--space-l);
+    }
+  }
   @include b.breakpoint-down(lg) {
     padding: var(--space-s);
   }

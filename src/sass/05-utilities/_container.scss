@@ -1,7 +1,7 @@
 @use '../01-abstracts/'as b;
 .container {
     --max-width: 87.5rem;//1400px
-    --padding: 2.75rem;
+    --padding: var(--space-m);
     max-width: var(--max-width);
     margin-inline: auto;
     padding-inline: var(--padding);

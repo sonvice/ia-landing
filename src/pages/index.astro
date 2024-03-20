@@ -10,6 +10,9 @@ import Working from "../components/design/Working.astro";
 import Footer from "../components/design/Footer.astro";
 import ButtonGradient from "../assets/svg/ButtonGradient.astro";
 import ClipPath from "../assets/svg/ClipPath.astro";
+
+
+
 import {SEO} from 'astro-seo';
 import "../sass/main.scss";
 ---
@@ -18,17 +21,18 @@ import "../sass/main.scss";
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href={brainwaveSymbol.src} />
+    <link rel="canonical" href='https://ia-landing.netlify.app/'/>
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     
     <SEO 
-    description="Introducing Brainwave, a fully-featured AI landing page kit that comes with design files and stunning illustrations with alpha (transparent background) in Figma."
+    description="Introducing Brainwave, a fully-featured AI landing page"
       title="Brainwave - AI Landing Page"
       openGraph={{
         basic:{
           title:'Brainwave - AI Landing Page',
           type: 'Landing',
-          image: '/portada.jpg'
+          image: 'https://ia-landing.netlify.app/portada.jpg'
         }
         
       }}
@@ -43,7 +47,7 @@ import "../sass/main.scss";
           {
             name: "twitter:image",
             content:
-              "/portada.jpg",
+              "https://ia-landing.netlify.app/portada.jpg",
           },
           { name: "twitter:title", content: "Brainwave - AI Landing Page" },
           { name: "twitter:description", content: "Introducing Brainwave, a fully-featured AI landing page" },
